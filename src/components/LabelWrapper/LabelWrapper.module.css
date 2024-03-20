@@ -1,0 +1,12 @@
+.labelWrapper {
+  display: inline-block;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.0024em;
+
+  margin-bottom: 8px;
+}
