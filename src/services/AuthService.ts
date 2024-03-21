@@ -36,7 +36,7 @@ class AuthService extends CrudService {
       "/login"
     );
 
-    if ("details" in response) {
+    if ("details" in response && 'error' in response && !!response.error) {
       const error = response.details;
 
       if (typeof error === "string") {
@@ -61,9 +61,9 @@ class AuthService extends CrudService {
     const response = await this.create<
       { email: AuthRequest["email"] },
       AuthResponse
-    >(data, routeParams, "/reset-password");
+    >(data, routeParams, "/password-reset");
 
-    if ("details" in response) {
+    if ("details" in response && 'error' in response && !!response.error) {
       const error = response.details;
 
       if (typeof error === "string") {
@@ -72,12 +72,12 @@ class AuthService extends CrudService {
       }
 
       error.forEach(({ error, field_name }) => {
-        toast.error(`The field: ${field_name} ${error}`);
+        toast.error(`Error field: ${field_name}. Reason: ${error}`);
       });
       return null;
     }
 
-    localStorage.setItem("access_token", response.access_token);
+    toast.success(response.detail);
 
     return response;
   }
@@ -88,10 +88,10 @@ class AuthService extends CrudService {
     const response = await this.create<ResetPasswordRequest, AuthResponse>(
       data,
       routeParams,
-      "/password-reset"
+      "/password-set"
     );
 
-    if ("details" in response) {
+    if ("details" in response && 'error' in response && !!response.error) {
       const error = response.details;
 
       if (typeof error === "string") {
@@ -104,6 +104,8 @@ class AuthService extends CrudService {
       });
       return null;
     }
+    console.log('here')
+
 
     return response;
   }

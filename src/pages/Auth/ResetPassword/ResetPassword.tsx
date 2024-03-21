@@ -69,6 +69,7 @@ export const ResetPassword = () => {
       <div className={styles.inputs}>
         <LabelWrapper text="Password">
           <ThemedInput
+            name="password"
             type="password"
             placeholder="Password"
             handleChange={setPasswordValue}
@@ -99,7 +100,7 @@ export const ResetPassword = () => {
           Send
         </Button>
 
-        <Button type="button" onClick={() => navigate(-1)}>
+        <Button type="button" onClick={() => navigate(`/${ROUTER_PATHS.AUTH}`)}>
           Cancel
         </Button>
       </div>

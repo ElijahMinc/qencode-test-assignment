@@ -41,7 +41,7 @@ export const ForgotPassword = () => {
 
     if (!res) return;
 
-    navigate(ROUTER_PATHS.RESET_PASSWORD, { replace: true });
+    navigate(`/${ROUTER_PATHS.AUTH}/${ROUTER_PATHS.RESET_PASSWORD}`);
   };
 
   return (
@@ -72,7 +72,7 @@ export const ForgotPassword = () => {
           Send
         </Button>
 
-        <Button type="button" onClick={() => navigate(-1)}>
+        <Button type="button" onClick={() => navigate(`/${ROUTER_PATHS.AUTH}`)}>
           Cancel
         </Button>
       </div>
