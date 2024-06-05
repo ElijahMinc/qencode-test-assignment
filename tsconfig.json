@@ -19,20 +19,28 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "src",
+    "baseUrl": "src/",
     "paths": {
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
       "common/*": ["common/*"],
       "config/*": ["config/*"],
       "context/*": ["context/*"],
-      "pages/*": ["pages/*"],
+      // "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
       "router/*": ["router/*"],
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "services/*": ["services/*"],
-      "constants/*": ["constants/*"]
+      "constants/*": ["constants/*"],
+
+      // FSD
+      "@app/*": ["app/*"],
+      "@pages/*": ["pages/*"],
+      "@widgets/*": ["widgets/*"],
+      "@features/*": ["features/*"],
+      "@entities/*": ["entities/*"],
+      "@shared/*": ["shared/*"]
     }
   },
   "include": ["src"],
